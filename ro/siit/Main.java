@@ -22,6 +22,10 @@ public class Main {
                 - Student
                 - Employee
              Employee:
+                - proffesor
+                - secretary
+                - accountant
+                - janitor
          */
     }
 }
