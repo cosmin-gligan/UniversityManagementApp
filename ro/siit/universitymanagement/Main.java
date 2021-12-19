@@ -1,9 +1,11 @@
-package ro.siit;
+package ro.siit.universitymanagement;
+
+import ro.siit.universitymanagement.services.UniversityManagementService;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
 
 //        Create the class structure for remaining entities in university diagram, except institution section.
 //        Write the structure in java code with relations between classes (inheritance/composition).
@@ -21,11 +23,15 @@ public class Main {
              - Persons:
                 - Student
                 - Employee
-             Employee:
+             - Employee:
                 - proffesor
                 - secretary
                 - accountant
                 - janitor
          */
+
+        UniversityManagementService universityManagementService = new UniversityManagementService();
+        universityManagementService.startApp();
+
     }
 }
