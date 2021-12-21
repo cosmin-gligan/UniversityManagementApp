@@ -6,13 +6,13 @@ import java.util.Objects;
 
 public class Person implements Comparable<Person> {
 
-    protected String firstName;
-    protected String lastName;
-    protected String cnp;
-    protected int age;
-    protected String gender;
+    private String firstName;
+    private String lastName;
+    private String cnp;
+    private int age;
+    private String gender;
 
-    protected Person(String firstName, String lastName, String cnp, int age) {
+    public Person(String firstName, String lastName, String cnp, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.cnp = cnp;
@@ -102,12 +102,10 @@ public class Person implements Comparable<Person> {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", cnp='" + cnp + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                '}';
+        return "" +
+                " fullName='" + this.getFullName() + '\'' +
+                ", cnp='" + this.getCnp() + '\'' +
+                ", age=" + this.getAge() +
+                ", gender='" + this.getGender() + '\'';
     }
 }

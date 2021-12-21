@@ -18,12 +18,12 @@ public class Professor extends Person {
 
     @Override
     public String toString() {
-        return "Professor{" +
-                ", full name: " + this.getFullName() + '\'' +
-                ", cnp='" + cnp + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", income=" + income +
+        return " - " +
+                this.getFullName() +
+                ", cnp='" + getCnp() + '\'' +
+                ", age=" + getAge() +
+                ", gender='" + getGender() + '\'' +
+                ", income=" + getIncome() +
                 '}';
     }
 }

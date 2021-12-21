@@ -29,9 +29,21 @@ public class Course implements Comparable<Course> {
         this.professorList = professorList;
     }
 
+    public String printProfessors(){
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\t\t\t\t\t\tProfessors: ");
+        for ( Professor professor : getProfessorList() ){
+            sb.append("\n\t\t\t\t\t\t" + professor.toString());
+        }
+
+        return sb.toString();
+    }
+
+
     @Override
     public String toString() {
-        return " - " + this.getName();
+        return " - " + this.getName() + printProfessors();
     }
 
     @Override
