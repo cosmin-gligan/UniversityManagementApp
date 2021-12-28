@@ -13,6 +13,7 @@ public class Faculty {
     private Set<Course> courses = new TreeSet();
     private Set<Room> rooms = new TreeSet<>();
     private Map<String, Employee> employees = new TreeMap();
+    private Map<String, Student> students = new TreeMap();
 
 
     public Faculty(String name, String deanName, String address, String shortName, FacultyProfileEnum profile) {
@@ -62,6 +63,14 @@ public class Faculty {
         this.employees = employees;
     }
 
+    public Map<String, Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Map<String, Student> students) {
+        this.students = students;
+    }
+
     public String printCourses(){
         StringBuilder sb = new StringBuilder();
         sb.append("\n\t\t\tCourses: ");
@@ -80,6 +89,15 @@ public class Faculty {
         return sb.toString();
     }
 
+    public String printStudents(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\t\t\tStudents: ");
+        for ( Student student : students.values() ){
+            sb.append("\n\t\t\t\t" + student.toString());
+        }
+        return sb.toString();
+    }
+
     @Override
     public String toString() {
         return  " - " + this.getName() +
@@ -87,7 +105,8 @@ public class Faculty {
                 ", profile='" + this.getProfile() + '\'' +
                 ", deanName='" + this.getDeanName() + '\'' +
                 ":" + printCourses()
-                + printEmployees();
+                + printEmployees()
+                + printStudents();
     }
 
     @Override

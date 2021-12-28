@@ -23,7 +23,6 @@ public class Professor extends Person {
                 ", cnp='" + getCnp() + '\'' +
                 ", age=" + getAge() +
                 ", gender='" + getGender() + '\'' +
-                ", income=" + getIncome() +
-                '}';
+                ", income=" + getIncome();
     }
 }

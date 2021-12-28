@@ -7,6 +7,7 @@ public class Course implements Comparable<Course> {
     private final String name;
     private final String shortName;
     public Set<Professor> professorList = new TreeSet<>();
+    public Set<Student> studentList = new TreeSet<>();
 
     public Course(String name, String shortName) {
         this.name = name;
@@ -29,6 +30,14 @@ public class Course implements Comparable<Course> {
         this.professorList = professorList;
     }
 
+    public Set<Student> getStudentList() {
+        return studentList;
+    }
+
+    public void setStudentList(Set<Student> studentList) {
+        this.studentList = studentList;
+    }
+
     public String printProfessors(){
 
         StringBuilder sb = new StringBuilder();
@@ -40,10 +49,21 @@ public class Course implements Comparable<Course> {
         return sb.toString();
     }
 
+    public String printStudents(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n\t\t\t\t\t\tStudents: ");
+        for ( Student student : getStudentList() ){
+            sb.append("\n\t\t\t\t\t\t" + student.toString());
+        }
+
+        return sb.toString();
+
+    }
+
 
     @Override
     public String toString() {
-        return " - " + this.getName() + printProfessors();
+        return " - " + this.getName() + printProfessors() + printStudents();
     }
 
     @Override
